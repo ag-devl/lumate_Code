@@ -1,7 +1,7 @@
 {% if visitor_list %}
         <ul>
         {% for visitor in visitor_list %}
-                <li>{{visitor.first_name}} {{visitor.last_name}}</li>
+                <li>{{visitor.first_name}} {{visitor.last_name}} {{visitor.visited_on}}</li>
         {% endfor %}
         </ul>
 {% else %}
