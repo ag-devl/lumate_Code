@@ -1,0 +1,11 @@
+{% if visitor_list %}
+        <ul>
+        {% for visitor in visitor_list %}
+                <li>{{visitor.first_name}} {{visitor.last_name}}</li>
+        {% endfor %}
+        </ul>
+{% else %}
+        <p> No visitors yet. </p>
+
+{% endif %}
+
