@@ -17,8 +17,19 @@ DATABASES = {
         'USER': 'ubuntu',
         'PASSWORD': 'somepass',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
+        'PORT': '',
+	},                      # Set to empty string for default.
+    'postgresql_manager_conn':{
+	'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	'NAME': 'lumatedb2',
+	'USER': 'ubuntu',
+	'PASSWORD': 'somepass',
+	'HOST': '',
+	'PORT': '',
+	'OPTIONS': {
+		'autocommit': True,
+	},
+    },
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -121,6 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'postgresql_manager',
     'guestbook',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
