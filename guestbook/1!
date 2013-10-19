@@ -1,0 +1,12 @@
+from django.template import Context, loader
+from guestbook.models import Visitor
+from django.http import HttpResponse
+
+# Create your views here.	
+def index(request):
+	visitor_array = Visitor.objects.all()
+	t = loader.get_template('guestbook/index.html')
+	c = Context ({
+		'visitor_list' : visitor_array,
+	})
+	return HttpResponse(t.render(c))	
